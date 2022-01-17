@@ -1,0 +1,791 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.6">
+    
+    
+      
+        <title>places list - PLACES API DOC</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.cd566b2a.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.e6a45f82.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#success-responses" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="PLACES API DOC" class="md-header__button md-logo" aria-label="PLACES API DOC" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            PLACES API DOC
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              places list
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="PLACES API DOC" class="md-nav__button md-logo" aria-label="PLACES API DOC" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    PLACES API DOC
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          Places
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Places" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Places
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          places list
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        places list
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#success-responses" class="md-nav__link">
+    Success Responses
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../places_detail/" class="md-nav__link">
+        places detail
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../places_create/" class="md-nav__link">
+        places create
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../places_search_filter/" class="md-nav__link">
+        places search filter
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../registration/" class="md-nav__link">
+        Registration
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          Authtorizaiton
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Authtorizaiton" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Authtorizaiton
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../token/" class="md-nav__link">
+        token
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../token_refresh/" class="md-nav__link">
+        token refresh
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5">
+          Reserves
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Reserves" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Reserves
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reserves/reserves_list/" class="md-nav__link">
+        reserves list
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reserves/reserves_detail/" class="md-nav__link">
+        reserves detail
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reserves/reserves_create/" class="md-nav__link">
+        reserves create
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6">
+          Reviews
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Reviews" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Reviews
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reviews/reviews_list/" class="md-nav__link">
+        reviews list
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reviews/reviews_detail/" class="md-nav__link">
+        reviews detail
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reviews/reviews_create/" class="md-nav__link">
+        reviews create
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#success-responses" class="md-nav__link">
+    Success Responses
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+  <h1>places list</h1>
+
+<p>Выводит информацию обо всех местах</p>
+<p><strong>URL</strong> : <code>/places/</code></p>
+<p><strong>Method</strong> : <code>GET</code></p>
+<p><strong>Auth required</strong> : NO</p>
+<p><strong>Permissions required</strong> : None</p>
+<p><strong>Data constraints</strong> : <code>{}</code></p>
+<h2 id="success-responses">Success Responses</h2>
+<p><strong>Code</strong> : <code>200 OK</code></p>
+<p><strong>Content</strong> : <code>[{}]</code></p>
+<pre><code class="language-json">[
+    {
+        &quot;id&quot;: 4,
+        &quot;host&quot;: {
+            &quot;id&quot;: 1,
+            &quot;password&quot;: &quot;pbkdf2_sha256$320000$WqfGI7IC1P4MhfWFYwx4RV$c1JFPxsv3mzJe7RBcSDVBLX4b2jOSkuECL3vmXLZUwc=&quot;,
+            &quot;last_login&quot;: &quot;2022-01-04T10:05:13.434077Z&quot;,
+            &quot;is_superuser&quot;: true,
+            &quot;phone_number&quot;: &quot;+79630983774&quot;,
+            &quot;email&quot;: &quot;a@a.com&quot;,
+            &quot;first_name&quot;: &quot;admin&quot;,
+            &quot;join_date&quot;: &quot;2022-01-04T10:05:02.629885Z&quot;,
+            &quot;is_staff&quot;: true,
+            &quot;is_host&quot;: true,
+            &quot;is_active&quot;: true,
+            &quot;groups&quot;: [],
+            &quot;user_permissions&quot;: []
+        },
+        &quot;place_type&quot;: &quot;House&quot;,
+        &quot;place_offers&quot;: &quot;Wifi, Kitchen, Free parking on premises, Shampoo, Hot water, Body soap, Body Washer, Bed linens, Smoke alarm, Cooking basics, TV, Air conditioning, Hair dryer&quot;,
+        &quot;title&quot;: &quot;YOUR winter home in St Petersburg,FL&quot;,
+        &quot;desc&quot;: &quot;The perfect winter getaway. This home in St Petersburg, is close to 275, with a short trip to the beaches, downtown and shopping.\nAll you need to do is pack your toothbrush and a few clothes, then ENJOY.&quot;,
+        &quot;beds&quot;: 3,
+        &quot;bedrooms&quot;: 2,
+        &quot;bathrooms&quot;: 2,
+        &quot;guests&quot;: 4,
+        &quot;location&quot;: &quot;Florida, United States&quot;,
+        &quot;image&quot;: &quot;http://127.0.0.1:8000/images/places/YOUR%20winter%20home%20in%20St%20Petersburg%2CFL/d772d338-6ac3-4ed7-9cc5-43706fd7181e.webp&quot;,
+        &quot;price&quot;: 5360
+    },
+    {
+        &quot;id&quot;: 5,
+        &quot;host&quot;: {
+            &quot;id&quot;: 1,
+            &quot;password&quot;: &quot;pbkdf2_sha256$320000$WqfGI7IC1P4MhfWFYwx4RV$c1JFPxsv3mzJe7RBcSDVBLX4b2jOSkuECL3vmXLZUwc=&quot;,
+            &quot;last_login&quot;: &quot;2022-01-04T10:05:13.434077Z&quot;,
+            &quot;is_superuser&quot;: true,
+            &quot;phone_number&quot;: &quot;+79630983774&quot;,
+            &quot;email&quot;: &quot;a@a.com&quot;,
+            &quot;first_name&quot;: &quot;admin&quot;,
+            &quot;join_date&quot;: &quot;2022-01-04T10:05:02.629885Z&quot;,
+            &quot;is_staff&quot;: true,
+            &quot;is_host&quot;: true,
+            &quot;is_active&quot;: true,
+            &quot;groups&quot;: [],
+            &quot;user_permissions&quot;: []
+        },
+        &quot;place_type&quot;: &quot;House&quot;,
+        &quot;place_offers&quot;: &quot;Kitchen, Free parking on premises, Air conditioning, Shampoo, Body Washer, Bed linens&quot;,
+        &quot;title&quot;: &quot;Casa Del Prince Upper&quot;,
+        &quot;desc&quot;: &quot;Come enjoy the unique Shabby chic sleeping and sitting area furnishings in French design motif. Reminiscent of New Orleans; all in new construction Studio apartments. Brilliant Brass decorative touch's; will remind you of Louie Armstrong's trumpet! Apartments feature all the comforts of home, including your own in-unit washer and dryer. Located in the quiet, convenient and historic Euclid St. Paul / Crescent Lake neighborhood of St. Petersburg.&quot;,
+        &quot;beds&quot;: 1,
+        &quot;bedrooms&quot;: 1,
+        &quot;bathrooms&quot;: 1,
+        &quot;guests&quot;: 2,
+        &quot;location&quot;: &quot;Saint Petersburg&quot;,
+        &quot;image&quot;: &quot;http://127.0.0.1:8000/images/places/Casa%20Del%20Prince%20Upper/2.webp&quot;,
+        &quot;price&quot;: 8782
+    },
+    {
+        &quot;id&quot;: 8,
+        &quot;host&quot;: {
+            &quot;id&quot;: 1,
+            &quot;password&quot;: &quot;pbkdf2_sha256$320000$WqfGI7IC1P4MhfWFYwx4RV$c1JFPxsv3mzJe7RBcSDVBLX4b2jOSkuECL3vmXLZUwc=&quot;,
+            &quot;last_login&quot;: &quot;2022-01-04T10:05:13.434077Z&quot;,
+            &quot;is_superuser&quot;: true,
+            &quot;phone_number&quot;: &quot;+79630983774&quot;,
+            &quot;email&quot;: &quot;a@a.com&quot;,
+            &quot;first_name&quot;: &quot;admin&quot;,
+            &quot;join_date&quot;: &quot;2022-01-04T10:05:02.629885Z&quot;,
+            &quot;is_staff&quot;: true,
+            &quot;is_host&quot;: true,
+            &quot;is_active&quot;: true,
+            &quot;groups&quot;: [],
+            &quot;user_permissions&quot;: []
+        },
+        &quot;place_type&quot;: &quot;House&quot;,
+        &quot;place_offers&quot;: &quot;Wifi, Free parking on premises&quot;,
+        &quot;title&quot;: &quot;Comfy, Cozy and Centrally Located.&quot;,
+        &quot;desc&quot;: &quot;This one bedroom apartment is centrally located, close to downtown, parks, shopping, the airport, public transportation and beaches. The apartment is pet friendly with it's own enclosed yard for you and your pets to enjoy and offers plenty of privacy. The apartment is perfect for solo travelers, couples, families and business travelers.&quot;,
+        &quot;beds&quot;: 3,
+        &quot;bedrooms&quot;: 1,
+        &quot;bathrooms&quot;: 1,
+        &quot;guests&quot;: 4,
+        &quot;location&quot;: &quot;Saint Petersburg&quot;,
+        &quot;image&quot;: &quot;http://127.0.0.1:8000/images/places/Comfy%2C%20Cozy%20and%20Centrally%20Located./4.webp&quot;,
+        &quot;price&quot;: 4715
+    },
+    {
+        &quot;id&quot;: 9,
+        &quot;host&quot;: {
+            &quot;id&quot;: 1,
+            &quot;password&quot;: &quot;pbkdf2_sha256$320000$WqfGI7IC1P4MhfWFYwx4RV$c1JFPxsv3mzJe7RBcSDVBLX4b2jOSkuECL3vmXLZUwc=&quot;,
+            &quot;last_login&quot;: &quot;2022-01-04T10:05:13.434077Z&quot;,
+            &quot;is_superuser&quot;: true,
+            &quot;phone_number&quot;: &quot;+79630983774&quot;,
+            &quot;email&quot;: &quot;a@a.com&quot;,
+            &quot;first_name&quot;: &quot;admin&quot;,
+            &quot;join_date&quot;: &quot;2022-01-04T10:05:02.629885Z&quot;,
+            &quot;is_staff&quot;: true,
+            &quot;is_host&quot;: true,
+            &quot;is_active&quot;: true,
+            &quot;groups&quot;: [],
+            &quot;user_permissions&quot;: []
+        },
+        &quot;place_type&quot;: &quot;Apartment&quot;,
+        &quot;place_offers&quot;: &quot;Kitchen, Pets allowed, Body soap, Hot water&quot;,
+        &quot;title&quot;: &quot;Luxury Living, 2Blocks to Trop, Walking DistanceC&quot;,
+        &quot;desc&quot;: &quot;Visit St Petersburg with Luxury! Walking distance to everything Downtown St Pete has to offer! Walking distance to Tropicana Field! All the culture and food you need, just walking down the street. 1 Mile from the St Pete Pier. 10-15 min drive to the beach. And all these Amenities, including a roof top pool with a skyline view of the city, that this great building has to offer!&quot;,
+        &quot;beds&quot;: 1,
+        &quot;bedrooms&quot;: 1,
+        &quot;bathrooms&quot;: 1,
+        &quot;guests&quot;: 4,
+        &quot;location&quot;: &quot;St Petersburg&quot;,
+        &quot;image&quot;: &quot;http://127.0.0.1:8000/images/places/Luxury%20Living%2C%202Blocks%20to%20Trop%2C%20Walking%20DistanceC/5.webp&quot;,
+        &quot;price&quot;: 5743
+    },
+]
+</code></pre>
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../.." class="md-footer__link md-footer__link--prev" aria-label="Previous: Home" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Home
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../places_detail/" class="md-footer__link md-footer__link--next" aria-label="Next: places detail" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              places detail
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.22074ed6.min.js"}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.1514a9a0.min.js"></script>
+      
+    
+  </body>
+</html>
